@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stark Industries — Mark LXXXV
 
-## Getting Started
+Página conceito inspirada no Homem de Ferro: o usuário "roda um diagnóstico" da armadura Mark LXXXV rolando a página. Uma sequência de 169 quadros é desenhada em canvas e avança conforme o scroll, com falas do Tony Stark aparecendo em pontos específicos da animação.
 
-First, run the development server:
+🔗 **Ao vivo:** [iron-man-dusky.vercel.app](https://iron-man-dusky.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+> Projeto de fã, sem fins comerciais e sem vínculo com a Marvel ou a Disney. Feito para estudo e portfólio.
+
+## Stack
+
+Next.js (App Router) · React · TypeScript · Tailwind CSS 4 · Framer Motion · Lenis · ESLint
+
+## Destaques
+
+- **Sequência de frames em canvas:** 169 imagens pré-carregadas e desenhadas com `drawImage`, sincronizadas à posição do scroll
+- **Diálogos por progresso:** cada fala tem janela de entrada e saída definida em dados (`src/lib/hero.ts`), separando conteúdo de animação
+- Interface estilo HUD (telemetria, moldura, contador de sequência) com componentes reutilizáveis
+- Smooth scroll com Lenis via provider; reveals com Framer Motion
+
+## Estrutura
+
+```
+src/app/                         layout e página
+src/components/sections/         Hero, CinematicReveal, SystemsNominal, Footer
+src/components/ui/               HudFrame, Navbar, AnimatedSection, EyebrowBadge
+src/components/providers/        SmoothScrollProvider (Lenis)
+src/lib/                         dados da sequência e dos diálogos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Rodar localmente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev     # http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Design e código: **Whallyson Gabriel** · [Portfólio](https://whallyson-of-web.vercel.app) · [LinkedIn](https://www.linkedin.com/in/whallyson-gabriel-garcia-da-silva-914765235)
